@@ -225,6 +225,8 @@ flower:
   tolerations: []
 
 web:
+  extraPipPackages: 
+    - "flask-bcrypt"
   resources: {}
     # limits:
     #   cpu: "300m"
