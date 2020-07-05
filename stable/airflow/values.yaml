@@ -225,7 +225,6 @@ flower:
   tolerations: []
 
 web:
-  web:
   extraPipPackages:
     - "flask-bcrypt"
     - "flask-oauthlib>=0.9"
