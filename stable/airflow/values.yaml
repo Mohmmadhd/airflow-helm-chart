@@ -16,7 +16,8 @@ airflow:
   #   readOnly: true
   #   subPath: file.yaml
 
-
+  extraPipPackages: 
+    - "flask-bcrypt"
   ##
   ## Extra environment variables to mount in the web, scheduler, and worker pods:
   extraEnv:
@@ -37,7 +38,8 @@ airflow:
   ## Generate fernetKey with:
   ##    python -c "from cryptography.fernet import Fernet; FERNET_KEY = Fernet.generate_key().decode(); print(FERNET_KEY)"
   ## fernetKey: ABCDABCDABCDABCDABCDABCDABCDABCDABCDABCD
-  fernetKey: ""
+  fernetKey: "pHKVjRZMI8VNmJB2SoPrN56CcfMXkA6o9uh5otmCM98="
+
   service:
     annotations: {}
     type: ClusterIP

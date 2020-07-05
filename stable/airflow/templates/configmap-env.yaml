@@ -55,6 +55,8 @@ data:
   AIRFLOW__SCHEDULER__CHILD_PROCESS_LOG_DIRECTORY: "{{ printf "%s/%s" .Values.logs.path "scheduler" }}"
   AIRFLOW__WEBSERVER__BASE_URL: "http://localhost:8080{{ .Values.ingress.web.path }}"
   # Disabling XCom pickling for forward compatibility
+  AIRFLOW__WEBSERVER__AUTHENTICATE: "True"
+  AIRFLOW__WEBSERVER__AUTH_BACKEND: "airflow.contrib.auth.backends.password_auth"
   AIRFLOW__CORE__ENABLE_XCOM_PICKLING: "false"
   # For backwards compat with AF < 1.10, CELERY_CONCURRENCY got renamed to WORKER_CONCURRENCY
   AIRFLOW__CELERY__CELERY_CONCURRENCY: "{{ .Values.workers.celery.instances }}"
